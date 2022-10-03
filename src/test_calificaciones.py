@@ -1,6 +1,16 @@
 from calificaciones import *
 
-data = pedir_datos()
-print("Aciertos: " + data[0] + "\nErrores: " + data[1] + "\nRespuestas totales: " + data[2])
+def main():
+    """aciertos, errores, total_respuestas = pedir_datos()
+    nota = calculadora(aciertos, errores, total_respuestas)
+    print("Tu nota es " + str(nota))"""
 
-print("Nota del alumno: " + calculadora(data[0], data[1], data[2]))
+    cuestionarios = pide_cuestionarios()
+    parciales = pide_parciales()
+    proyectos = pide_proyectos()
+
+    nota_evaluacion = calcula_nota_evaluacion_continua(cuestionarios, parciales, proyectos)
+    print("Tu nota de la evaluación continua es: " + str(nota_evaluacion))
+
+if __name__ == "__main__":
+    main()
